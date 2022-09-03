@@ -20,7 +20,7 @@ class Listing(models.Model):
     description = models.CharField(max_length=200)
     price = models.FloatField()
     category = models.ForeignKey(
-        Category, null=True, default=models.SET_NULL, on_delete=models.SET_NULL)
+        Category, null=True, default=None, on_delete=models.CASCADE)
     image = models.URLField(blank=True)
     date_added = models.DateTimeField()
     user = models.ForeignKey(User, on_delete=models.CASCADE)
