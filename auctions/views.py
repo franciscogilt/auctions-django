@@ -58,6 +58,8 @@ def register(request):
         try:
             user = User.objects.create_user(username, email, password)
             user.save()
+            watchlist = Watchlist(user=user)
+            watchlist.save()
         except IntegrityError:
             return render(request, "auctions/register.html", {
                 "message": "Username already taken."
@@ -66,6 +68,7 @@ def register(request):
         return HttpResponseRedirect(reverse("index"))
     else:
         return render(request, "auctions/register.html")
+
 
 @login_required(login_url="login")
 def new_listing(request):
@@ -228,12 +231,14 @@ def categories(request):
         "categories": categories
     })
 
+
 def category(request, name):
     category = Category.objects.get(name=name)
     return render(request, "auctions/category.html", {
         "category": category,
         "listings": Listing.objects.filter(category=category)
     })
+
 
 @login_required(login_url="login")
 def my_listings(request):
