@@ -1,5 +1,10 @@
 venv
 *.pyc
 .env
-db.sqlite3
 staticfiles/
+
+# Text backup files
+*.bak
+
+# Database
+*.sqlite3
