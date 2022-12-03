@@ -245,3 +245,8 @@ def my_listings(request):
     return render(request, "auctions/my_listings.html", {
         "listings": Listing.objects.filter(user=request.user)
     })
+
+
+@login_required(login_url="login")
+def profile(request):
+    return render(request, "auctions/profile.html")
