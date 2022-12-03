@@ -12,12 +12,11 @@ pipenv shell
 python manage.py migrate
 python manage.py createsuperuser
 python manage.py runserver
-Abrir navegador en http://127.0.0.1:8000/
 ```
+Abrir [http://localhost:8000](http://localhost:8000) para ver en el navegador.
 
 ## Agregar categorías de productos
-```
-Abrir navegador en http://127.0.0.1:8000/admin
-Iniciar sesión con el super usuario creado
-Seleccionar Categorys y agregar algunas
-```
+
+Abrir [http://localhost:8000/admin](http://localhost:8000/admin) para acceder al portal administrativo.\
+Iniciar sesión con el super usuario creado.\
+Seleccionar Categorys y agregar algunas.
